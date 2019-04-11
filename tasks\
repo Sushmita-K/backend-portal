@@ -1,0 +1,17 @@
+//write the query to find how many  parents whose names start with A : { $regex:/^A/} // done
+write the query to update all in one shots.//done
+every school and parent document should have created_at and updated_at,should have timestamp have 1 april//done
+school names should be unique,if any duplicate entry it should through an error//pending
+add school name in a parent collection//done
+get parent name with childern name suma// done
+remove all the parents with phoneNumber//done
+
+db.getCollection('parentAjith').updateMany({}, { $set: {"createdAt": new Date("2019-04-01"),"updatedAt":new Date("2019-04-01")} })
+
+
+
+db.getCollection('parent').update({},{$unset: {number:1}},{multi: true});//for remove specific field    
+
+
+
+mongoimport -d parentPortal -c school --type CSV --file word.csv --headerline
