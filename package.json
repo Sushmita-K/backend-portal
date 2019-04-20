@@ -8,6 +8,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^3.0.5",
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
     "cookie-parser": "^1.4.4",
     "cors": "^2.8.5",
@@ -15,10 +17,19 @@
     "express": "^4.16.4",
     "json2csv": "^4.4.1",
     "mongodb": "^3.2.2",
-    "mongoose": "^5.4.22",
+    "mongoose": "^5.5.1",
     "multer": "^1.4.1",
     "validator": "^10.11.0"
   },
   "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sushmita-K/backend-portal.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/Sushmita-K/backend-portal/issues"
+  },
+  "homepage": "https://github.com/Sushmita-K/backend-portal#readme",
   "description": ""
 }
