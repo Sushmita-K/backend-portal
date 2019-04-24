@@ -31,16 +31,21 @@ module.exports = (function () {
             })
         }
         else {
-            let schoolId = await user.findOne({ _id: headers }, { schools: 1 }).lean()
-            console.log("welcome");
+            schoolId = await user.findOne({ _id: headers }, { schools: 1, _id: 0 }).lean()
+            console.log(schoolId.schools);
+
+            schools.find({ _id: { $in: schoolId.schools } }).then(result => {
+                res.send({
+                    status: 200,
+                    message: "Schools fetched successfully",
+                    result: result
+                })
+            })
 
 
         }
 
 
-        // schools.find({ _id: { $in: schoolId } }).then(result => {
-        //     res.send(result)
-        // })
     })
     return router;
 })();

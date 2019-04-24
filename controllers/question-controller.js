@@ -7,9 +7,11 @@ module.exports = (function () {
 
     router.post('/', (req, res) => {
         let question = new questions({
-            name: req.body.name,
+
+            questions: req.body.questions,
             externalId: req.body.externalId,
             options: req.body.options,
+            value: req.body.value,
             studentName: req.body.studentName,
             inputType: req.body.inputType
         })
@@ -23,9 +25,24 @@ module.exports = (function () {
     });
 
     router.get('/', (req, res) => {
-        questions.find({}).then(result => {
-            res.send(result)
-        })
+
+        let headers = req.headers["auth"]
+        if (!headers) {
+            res.send({
+                message: "Headers is not there",
+                status: 500
+            })
+        }
+        else {
+
+            questions.find({}).then(result => {
+                res.send({
+                    status: 200,
+                    message: "Questions fetched successfully",
+                    result: result
+                })
+            })
+        }
     })
 
     return router;
