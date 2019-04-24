@@ -3,12 +3,10 @@ module.exports = (function () {
     require('body-parser');
     const express = require('express');
     let { user } = require("../models/user")
-    // var bcrypt = require('bcrypt');
-
     const router = express.Router();
 
     router.post('/', (req, res) => {
-        // bcrypt.compare(req.body.password, hash, function (res) {
+
 
 
         user.findOne({ email: req.body.email, password: req.body.password }, function (err, user) {
@@ -32,6 +30,16 @@ module.exports = (function () {
 
         })
     });
+
+
+    router.get('/logout', (req, res) => {
+
+        res.send({
+            status: 200,
+            message: "Logout Successfully",
+        })
+    });
+
 
     return router;
 })();

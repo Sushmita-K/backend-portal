@@ -1,5 +1,6 @@
 const express = require("express");
 const bodyParser = require('body-parser')
+let cors = require('cors')
 
 let questions = require("./controllers/question-controller")
 let parents = require("./controllers/parent-controller")
@@ -8,12 +9,14 @@ let schools = require("./controllers/school-controller")
 let users = require("./controllers/user-controllers")
 let auth = require("./controllers/auth-controller")
 let authUser = require("./middleware/authenticator")
+let submissions = require("./controllers/submission-controller")
 
 require("./config")
 
 
 const app = express();
 
+app.use(cors())
 
 app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -32,6 +35,7 @@ app.use('/assessors', assessors);
 app.use('/schools', schools);
 app.use('/users', users);
 app.use('/auth', auth);
+app.use('/submission', submissions)
 
 app.listen(4201, () => {
     console.log("Server is listening on port 4201");

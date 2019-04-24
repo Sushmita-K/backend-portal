@@ -14,7 +14,8 @@ module.exports = (function () {
         let users = new user({
 
             email: req.body.email,
-            password: req.body.password
+            password: req.body.password,
+            schools: req.body.schools,
         })
 
         users.save().then(result => {

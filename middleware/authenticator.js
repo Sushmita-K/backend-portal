@@ -17,22 +17,7 @@ module.exports = function (req, res, next) {
     // }
     // next()
     // if (header) {
-    //     user.findOne({ _id: req.body._id }, function (err, school) {
-    //         if (school) {
-    //             res.send({
-    //                 schools: user.schools
-    //             })
 
-    //         }
-    //         console.log(user.schools)
-    //     })
-    // }
-    // else {
-    //     res.send("id is not sent");
-    //     next();
-
-    // }
-    // })
     next()
 }
 

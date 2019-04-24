@@ -2,9 +2,10 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var schema3 = new Schema(
     {
-        name: String,
+        questions: String,
         externalId: String,
         options: Array,
+        value: String,
         studentName: String,
         inputType: String
     })
