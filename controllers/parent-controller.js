@@ -8,6 +8,7 @@ module.exports = (function () {
     router.post('/', (req, res) => {
         let parents = new Parents({
             name: req.body.name,
+            externalId: req.body.externalId,
             schoolId: req.body.schoolId,
             phoneNumber: req.body.phoneNumber,
             student: req.body.student,
